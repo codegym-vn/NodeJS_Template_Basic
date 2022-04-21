@@ -7,6 +7,10 @@ let server = http.createServer(((req, res) => {
             res.writeHead(404, {'Content-Type': 'text/html'});
             return res.end("404 Not Found");
         }
+        // Thực hiện replace nội dung
+        let username = "Admin";
+        str = str.replace("{username}", username)
+
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(str);
         return res.end();
